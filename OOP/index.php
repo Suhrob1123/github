@@ -149,7 +149,7 @@ echo $cat->walk(). "<br>";
 
 
 //Static methods and property
-
+//Method static bolsa obyek yaratmasdan ishlatsa boladi, property lar bilan ham shunday
 
 class It{
     public $ism="it";
@@ -159,11 +159,23 @@ class It{
     public function check(){
         return "true";
     }
-    public  function ism(){
+    public /* static */ function ism(){
         return $this->ism;
     }
 }
 
 echo It::bark(). "<br>";
+
+
 $it=new It();
 echo $it->ism();
+
+
+
+//Constants
+class cons{
+    const THING="narsa";//$ belgisiz yoziladi va ozgratirib bolmaydi
+}
+
+
+
