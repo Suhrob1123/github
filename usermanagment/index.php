@@ -16,9 +16,10 @@ $users=$user->getAll();
     <a href="create.php">Foydalanuvchi qo'shish</a>
 
     <?php foreach($users as $user):?>
-       <h4> <?= $user['name'] ?></h4>
+       <a href="userpage.php?id=<?= $user['id']?>"><h4> <?= $user['name'] ?></h4></a>
         <h4><?= $user['email'] ?></h4>
-        <a href="delete.php?id=<?= $user['id'] ?>" onclick="return confirm('Haqiqatan o‘chirmoqchimisiz?')">O‘chirish</a>
+        <a href="update.php?id=<?= $user['id'] ?>">Update</a>
+        <a href="userpage.php?id=<?= $user['id'] ?>" onclick="return confirm('Haqiqatan o‘chirmoqchimisiz?')">O‘chirish</a>
         <hr>
     <?php endforeach ?>
 </body>
